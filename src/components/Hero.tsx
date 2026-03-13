@@ -1,13 +1,14 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Play, HeartPulse, ShieldAlert } from "lucide-react";
+import { ArrowRight, Play, HeartPulse, ShieldAlert, Zap } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import { cn } from "@/lib/utils";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center pt-20 px-6 overflow-hidden">
+    <section className="relative min-h-screen flex flex-col items-center justify-center pt-40 px-6 overflow-hidden">
       {/* Background Glow */}
       <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-primary/20 blur-[120px] rounded-full -z-10" />
       <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-accent/10 blur-[120px] rounded-full -z-10" />

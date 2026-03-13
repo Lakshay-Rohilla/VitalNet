@@ -45,25 +45,24 @@
 - Node.js 18.x or later
 - npm or pnpm
 
-### Installation
+## 🌍 Run Anywhere (Portable Options)
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-username/vitalnet.git
-   cd vitalnet
-   ```
+This project is designed to be runnable on any machine with zero configuration.
 
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
+### Option A: One-Click (Windows)
+Simply double-click the `run_vitalnet.bat` file in the root directory. It will automatically install dependencies, build the project, and start the server.
 
-3. Run the development server:
-   ```bash
-   npm run dev
-   ```
+### Option B: Docker (Recommended for Portability)
+If you have Docker installed, run:
+```bash
+docker-compose up --build
+```
+The app will be available at `http://localhost:3000`.
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser.
+### Option C: Manual Installation
+1. Install dependencies: `npm install`
+2. Build: `npm run build`
+3. Start: `npm start`
 
 ---
 
