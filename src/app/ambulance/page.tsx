@@ -1,9 +1,21 @@
-```javascript
 "use client";
 
 import { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
-import { Activity, Truck, MapPin, Navigation, Signal, Wifi, LogOut } from "lucide-react";
+import { 
+  Activity, 
+  Truck, 
+  MapPin, 
+  Navigation, 
+  Signal, 
+  Wifi, 
+  LogOut,
+  AlertCircle,
+  Clock,
+  Heart,
+  Wind,
+  ArrowRight
+} from "lucide-react";
 import React from "react";
 
 // Dynamic import for Leaflet map to avoid SSR errors
