@@ -5,11 +5,7 @@ import dynamic from "next/dynamic";
 import { 
   Activity, 
   Truck, 
-  MapPin, 
   Navigation, 
-  Signal, 
-  Wifi, 
-  LogOut,
   AlertCircle,
   Clock,
   Heart,
