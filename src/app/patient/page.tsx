@@ -30,29 +30,29 @@ function Sidebar() {
   ];
 
   return (
-    <div className="w-24 md:w-64 h-screen glass border-r border-white/5 flex flex-col items-center py-8">
-      <div className="w-12 h-12 bg-primary rounded-2xl flex items-center justify-center mb-12">
-        <Activity className="text-white w-7 h-7" />
+    <div className="w-20 md:w-64 h-screen glass border-r border-white/5 flex flex-col items-center py-8 shrink-0">
+      <div className="w-10 h-10 md:w-12 md:h-12 bg-primary rounded-xl flex items-center justify-center mb-12">
+        <Activity className="text-white w-5 h-5 md:w-7 md:h-7" />
       </div>
       
-      <div className="flex-1 space-y-4 px-4 w-full">
+      <div className="flex-1 space-y-4 px-2 md:px-4 w-full">
         {items.map((item, i) => (
           <div 
             key={i} 
             className={cn(
-              "p-4 rounded-2xl flex items-center gap-4 cursor-pointer transition-all",
+              "p-3 md:p-4 rounded-2xl flex items-center justify-center md:justify-start gap-4 cursor-pointer transition-all",
               item.active ? "bg-primary/20 text-primary border border-primary/20" : "text-white/40 hover:text-white hover:bg-white/5"
             )}
           >
-            <item.icon className="w-6 h-6 shrink-0" />
+            <item.icon className="w-5 h-5 md:w-6 md:h-6 shrink-0" />
             <span className="hidden md:block font-bold text-sm tracking-tight">{item.label}</span>
           </div>
         ))}
       </div>
 
-      <div className="p-4 w-full">
-        <div className="p-4 rounded-2xl text-white/40 hover:text-white hover:bg-white/5 flex items-center gap-4 cursor-pointer transition-all">
-          <LogOut className="w-6 h-6 shrink-0" />
+      <div className="p-2 md:p-4 w-full">
+        <div className="p-3 md:p-4 rounded-2xl text-white/40 hover:text-white hover:bg-white/5 flex items-center justify-center md:justify-start gap-4 cursor-pointer transition-all">
+          <LogOut className="w-5 h-5 md:w-6 md:h-6 shrink-0" />
           <span className="hidden md:block font-bold text-sm tracking-tight">Logout</span>
         </div>
       </div>
@@ -128,24 +128,24 @@ export default function PatientDashboard() {
         <div className="max-w-7xl mx-auto space-y-12">
             {/* Header */}
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
-                <div>
-                    <h1 className="text-4xl font-black tracking-tight">Health Dashboard</h1>
-                    <p className="text-white/40 font-medium">Welcome back, patient. All systems normal.</p>
+                <div className="space-y-2">
+                    <h1 className="text-2xl md:text-4xl font-black tracking-tight">Health Dashboard</h1>
+                    <p className="text-sm md:text-base text-white/40 font-medium">Welcome back, patient. All systems normal.</p>
                 </div>
                 
-                <div className="flex items-center gap-4">
-                    <button className="px-6 py-3 glass rounded-2xl flex items-center gap-2 hover:bg-white/5 transition-all text-sm font-bold">
+                <div className="flex flex-wrap items-center gap-3 md:gap-4">
+                    <button className="flex-1 md:flex-none px-4 md:px-6 py-3 glass rounded-2xl flex items-center justify-center gap-2 hover:bg-white/5 transition-all text-xs md:text-sm font-bold">
                         <PhoneCall className="w-4 h-4 text-emerald-400" />
-                        Call Local Clinic
+                        Call Clinic
                     </button>
                     <button 
                         onClick={() => setTriageStatus(triageStatus === "alert" ? "idle" : "alert")}
                         className={cn(
-                            "px-8 py-3 rounded-2xl flex items-center gap-2 transition-all text-sm font-bold shadow-lg",
+                            "flex-1 md:flex-none px-6 md:px-8 py-3 rounded-2xl flex items-center justify-center gap-2 transition-all text-xs md:text-sm font-bold shadow-lg",
                             triageStatus === "alert" ? "bg-accent animate-sos" : "bg-primary hover:bg-primary/90"
                         )}
                     >
-                        <AlertCircle className="w-5 h-5" />
+                        <AlertCircle className="w-4 h-4 md:w-5 md:h-5" />
                         {triageStatus === "alert" ? "SOS ACTIVE" : "EMERGENCY SOS"}
                     </button>
                 </div>

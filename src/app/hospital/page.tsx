@@ -72,14 +72,14 @@ export default function HospitalPortal() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#0A0A0B] text-white flex">
+    <div className="min-h-screen bg-[#0A0A0B] text-white flex overflow-hidden">
       {/* Sidebar */}
-      <aside className="w-72 border-r border-white/5 p-8 flex flex-col gap-12 glass">
-          <div className="flex items-center gap-3">
+      <aside className="w-20 md:w-72 border-r border-white/5 p-4 md:p-8 flex flex-col gap-12 glass shrink-0 h-screen overflow-y-auto">
+          <div className="flex items-center justify-center md:justify-start gap-3">
               <div className="w-10 h-10 bg-accent rounded-xl flex items-center justify-center">
                   <Building2 className="text-white w-6 h-6" />
               </div>
-              <h1 className="text-xl font-black tracking-tight">City ER <span className="text-accent underline decoration-4">Hub</span></h1>
+              <h1 className="hidden md:block text-xl font-black tracking-tight">City ER <span className="text-accent underline decoration-4">Hub</span></h1>
           </div>
 
           <nav className="flex-1 space-y-2">
@@ -93,37 +93,37 @@ export default function HospitalPortal() {
                     key={item.label}
                     onClick={() => setActiveTab(item.label.toUpperCase())}
                     className={cn(
-                        "p-4 rounded-2xl flex items-center gap-4 cursor-pointer transition-all font-bold text-sm tracking-tight",
+                        "p-3 md:p-4 rounded-2xl flex items-center justify-center md:justify-start gap-4 cursor-pointer transition-all font-bold text-xs md:text-sm tracking-tight",
                         activeTab === item.label.toUpperCase() ? "bg-white/5 text-white border border-white/10" : "text-white/40 hover:text-white"
                     )}
                 >
                     <item.icon className="w-5 h-5 shrink-0" />
-                    {item.label}
+                    <span className="hidden md:block lowercase-words">{item.label}</span>
                 </div>
               ))}
           </nav>
 
-          <div className="p-6 glass-card rounded-[2rem] border-white/5 space-y-4">
+          <div className="hidden md:block p-6 glass-card rounded-[2rem] border-white/5 space-y-4">
               <p className="text-[10px] font-black uppercase text-accent tracking-widest text-center animate-pulse">Critical Alert</p>
               <p className="text-xs text-center text-white/60 font-medium">Elevated trauma intake expected in the next 1h due to local congestion.</p>
           </div>
       </aside>
 
       {/* Main Content */}
-      <main className="flex-1 p-12 overflow-y-auto space-y-12">
+      <main className="flex-1 p-6 md:p-12 overflow-y-auto space-y-12">
           {/* Header */}
-          <header className="flex items-center justify-between">
+          <header className="flex flex-col lg:flex-row lg:items-center justify-between gap-8">
               <div>
-                  <h2 className="text-4xl font-black tracking-tighter">ER Command Center</h2>
-                  <p className="text-white/40 font-medium">Real-time resource coordination mesh active.</p>
+                  <h2 className="text-3xl md:text-4xl font-black tracking-tighter">ER Command Center</h2>
+                  <p className="text-sm text-white/40 font-medium">Real-time resource coordination mesh active.</p>
               </div>
-              <div className="flex items-center gap-4">
-                  <div className="relative">
+              <div className="flex flex-wrap items-center gap-4">
+                  <div className="relative flex-1 min-w-[200px]">
                       <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-white/30" />
                       <input 
                         type="text" 
                         placeholder="Search patient ID..." 
-                        className="bg-white/5 border border-white/10 rounded-2xl py-3 pl-12 pr-6 text-sm focus:outline-none focus:ring-2 ring-primary/20 w-64"
+                        className="w-full bg-white/5 border border-white/10 rounded-2xl py-3 pl-12 pr-6 text-sm focus:outline-none focus:ring-2 ring-primary/20"
                       />
                   </div>
                   <button className="w-12 h-12 bg-primary rounded-2xl flex items-center justify-center hover:scale-105 transition-transform shadow-[0_0_20px_rgba(0,102,255,0.3)]">
