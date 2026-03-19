@@ -72,16 +72,6 @@ Double-click `run_vitalnet.bat` to automatically install, build, and start the s
 docker-compose up --build
 ```
 
----
-
-## 👥 The VitalNet Team
-Developed by a multidisciplinary team of 6 for the **Samsung Innovation Program**:
-1. **Lakshay Rohilla** - Lead Systems Architect & AI Integration
-2. [Member Name] - UI/UX Designer (Futuristic Glassmorphism)
-3. [Member Name] - Geospatial Logic & Map Integration
-4. [Member Name] - Backend Telemetry & Data Mesh
-5. [Member Name] - Health Informatics & Triage Logic
-6. [Member Name] - Quality Assurance & Deployment
 
 ---
 
